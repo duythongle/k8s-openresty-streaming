@@ -7,16 +7,16 @@
 * Integrated GeoIP REST Api (thanks to [Telize][2])
 * Lightweight image based on [openresty/openresty:alpine-fat flavor][5]
 
-
 # Prerequisites
 * [Git](https://git-scm.com/)
-* [Docker](https://docker.io), required for individual server deployment only.
-* [Kubernetes (aka K8s)](https://kubernetes.io/) required for K8s cluster deployment.
+* [Docker](https://docker.io), required for single server deployment only.
+* [Kubernetes (aka K8s)](https://kubernetes.io/), required for K8s cluster deployment.
 
 # Usage
 ### Quickstart with Docker
 SSH to your server and run
 ```bash
+git clone https://github.com/duythongle/k8s-openresty-streaming.git  
 docker run -dit --name my_streaming_server \
   -p 80:80 \
   -p 443:443 \
