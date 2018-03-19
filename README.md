@@ -3,14 +3,14 @@
 
 # Features
 * Support RTMP, HLS and MPEG-DASH streaming (thanks to [nginx rtmp module][3])
-* On the fly (and free) SSL registration and renewal inside [OpenResty/nginx](http://openresty.org) with [Let's Encrypt](https://letsencrypt.org) (thanks to [lua-resty-auto-ssl][4])
+* On the fly (and free) SSL registration and renewal inside [OpenResty/nginx][1] with [Let's Encrypt][7] (thanks to [lua-resty-auto-ssl][4])
 * Integrated GeoIP REST Api (thanks to [Telize][2])
 * Lightweight image based on [openresty/openresty:alpine-fat flavor][5]
 
 # Prerequisites
-* [Git](https://git-scm.com/)
-* [Docker](https://docker.io), required for single server deployment only.
-* [Kubernetes (aka K8s)](https://kubernetes.io/), required for K8s cluster deployment.
+* [Git][8]
+* [Docker][9], required for single server deployment only.
+* [Kubernetes (aka K8s)][6], required for K8s cluster deployment.
 
 # Usage
 ### Quickstart with Docker
@@ -36,7 +36,7 @@ Then go to http://streaming_server_ip/ to view openresty welcome home page
 * GeoIP REST API can be access at public location `/api/geoip`: http://*streaming_server_ip*/api/geoip/location/8.8.4.4
 Read more geoip api at [Telize GeoIP REST API][2]
 * Point your DNS to the server ip and see the magic of Auto SSL happens at https://*streaming_server_domain*
-> Note: Let's Encrypt has [rate limits](https://letsencrypt.org/docs/rate-limits/) and the first https request for a domain may take a few seconds to complete
+> Note: Let's Encrypt has [rate limits][10] and the first https request for a domain may take a few seconds to complete
 * [nginx rtmp module][3] has default application endpoint `my_live_stream`. You can push your live stream to the server via url:
 rtmp://*streaming_server_ip_or_domain*:1935/*my_live_stream*/*my_stream_name*
 
@@ -59,3 +59,7 @@ docker build -t openresty-streaming-server -f alpine-dev/Dockerfile .
 [4]: https://github.com/GUI/lua-resty-auto-ssl
 [5]: https://github.com/openresty/docker-openresty/blob/master/alpine-fat/Dockerfile
 [6]: https://kubernetes.io/
+[7]: https://letsencrypt.org
+[8]: https://git-scm.com/
+[9]: https://docker.io
+[10]:https://letsencrypt.org/docs/rate-limits/
