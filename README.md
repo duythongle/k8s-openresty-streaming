@@ -26,14 +26,14 @@ docker run -dit --name my_streaming_server \
   thongld/k8s-openresty-streaming:alpine-fat \
   openresty -g "daemon off;"
 ```
-Then your browser should display OpenResty welcome home page at http://streaming_server_ip/
+Then your browser should display OpenResty welcome home page at http://*streaming_server_ip*/
 ### Quickstart with Kubernetes
 *Coming soon...*
 ```bash
 ```
 Then go to http://streaming_server_ip/ to view openresty welcome home page
 ### More...
-* GeoIP REST API can be access at public location `/api/geoip`: http://*streaming_server_ip*/api/geoip/location/8.8.4.4
+* GeoIP REST API can be access at public location `/api/geoip`: http://*streaming_server_ip*/api/geoip/location/8.8.4.4.
 Read more geoip api at [Telize GeoIP REST API][2]
 * Point your DNS to the server ip and see the magic of Auto SSL happens at https://*streaming_server_domain*
 > Note: Let's Encrypt has [rate limits][10] and the first https request for a domain may take a few seconds to complete
