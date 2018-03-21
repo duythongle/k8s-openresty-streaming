@@ -44,7 +44,7 @@ rtmp://*streaming_server_ip_or_domain*:1935/*my_live_stream*/*my_stream_name*
 ```bash
 git clone https://github.com/duythongle/k8s-openresty-streaming.git
 cd k8s-openresty-streaming
-docker build -t openresty-streaming-server -f alpine-dev/Dockerfile .
+docker build -t openresty-streaming-server -f alpine-fat/Dockerfile .
 ```
 
 # TODO
