@@ -38,7 +38,7 @@ Read more geoip api at [Telize GeoIP REST API][2]
 * Point your DNS to the server ip and see the magic of Auto SSL happens at https://*streaming_server_domain*
 > Note: Let's Encrypt has [rate limits][10] and the first https request for a domain may take a few seconds to complete
 * [nginx rtmp module][3] has default application endpoint `my_live_stream`. You can push your live stream to the server via url:
-rtmp://*streaming_server_ip_or_domain*:1935/*my_live_stream*/*my_stream_name*
+rtmp://*streaming_server_ip_or_domain*:1935/*my_live_stream*/*my_stream_name* and playback with hls url http://*streaming_server_ip_or_domain*/hls/*my_stream_name*
 
 # Building from source
 ```bash
