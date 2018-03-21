@@ -21,7 +21,6 @@ docker run -dit --name my_streaming_server \
   -p 80:80 \
   -p 443:443 \
   -p 1935:1935 \
-  -v ~/k8s-openresty-streaming/conf.d:/usr/local/openresty/nginx/conf/conf.d \
   -v ~/k8s-openresty-streaming/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf \
   thongld/k8s-openresty-streaming:alpine-fat \
   openresty -g "daemon off;"
