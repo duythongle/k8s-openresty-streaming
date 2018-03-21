@@ -159,7 +159,7 @@ RUN mkdir -p /var/db/GeoIP \
   && curl -fSL https://geolite.maxmind.com/download/geoip/database/GeoLite2-ASN.tar.gz | \
   tar xzf - -C /var/db/GeoIP --strip-components=1
 
-RUN rm -rf /tmp/*.* && apk del .build-deps .gettext
+RUN rm -rf /tmp/* && apk del .build-deps .gettext
 
 ENV PATH=$PATH:/usr/local/openresty/luajit/bin:/usr/local/openresty/nginx/sbin:/usr/local/openresty/bin
 CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
