@@ -16,7 +16,9 @@
 ### Quickstart with Docker
 SSH to your server and run
 ```bash
+# Clone this repo
 git clone https://github.com/duythongle/k8s-openresty-streaming.git  
+# Run image and mount config files for later editing
 docker run -dit --name my_streaming_server \
   -p 80:80 \
   -p 443:443 \
@@ -27,12 +29,13 @@ docker run -dit --name my_streaming_server \
 ```
 Then your browser should display OpenResty welcome home page at http://*streaming_server_ip*/
 ### Quickstart with Kubernetes
-*Coming soon...*
+
 ```bash
+# Coming soon...
 ```
 Then go to http://streaming_server_ip/ to view openresty welcome home page
 ### More...
-* GeoIP REST API can be access at public location `/api/geoip`: http://*streaming_server_ip*/api/geoip/location/8.8.4.4.
+* GeoIP REST API can be accessed at public location `/api/geoip`. Ex.: http://*streaming_server_ip*/api/geoip/location/8.8.4.4.
 Read more geoip api at [Telize GeoIP REST API][2]
 * Point your DNS to the server ip and see the magic of Auto SSL happens at https://*streaming_server_domain*
 > Note: Let's Encrypt has [rate limits][10] and the first https request for a domain may take a few seconds to complete
@@ -43,17 +46,17 @@ rtmp://*streaming_server_ip_or_domain*:1935/*my_live_stream*/*my_stream_name* an
 ```bash
 git clone https://github.com/duythongle/k8s-openresty-streaming.git
 cd k8s-openresty-streaming
-docker build -t openresty-streaming-server -f alpine-fat/Dockerfile .
+docker build -t openresty-streaming-server -f alpine-fat/ Dockerfile.
 ```
 
 # TODO
 * 12factor ready
 * K8s ready
 * Helm support
-* Auto reload nginx when .conf changes
+* Auto reload Nginx when .conf changes
 
 [1]: https://github.com/openresty/openresty
-[2]: https://raw.githubusercontent.com/fcambus/telize
+[2]: https://github.com/fcambus/telize
 [3]: https://github.com/arut/nginx-rtmp-module
 [4]: https://github.com/GUI/lua-resty-auto-ssl
 [5]: https://github.com/openresty/docker-openresty/blob/master/alpine-fat/Dockerfile
