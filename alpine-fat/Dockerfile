@@ -143,8 +143,8 @@ RUN openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 \
   -keyout /etc/ssl/resty-auto-ssl-fallback.key \
   -out /etc/ssl/resty-auto-ssl-fallback.crt
 
-ADD nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
-ADD conf.d /usr/local/openresty/nginx/conf/conf.d
+ADD https://github.com/duythongle/k8s-openresty-streaming/raw/master/nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
+#ADD conf.d /usr/local/openresty/nginx/conf/conf.d
 
 RUN mkdir -p /tmp/telize-v${TELIZE_VERSION} \
   && curl -fSL https://github.com/fcambus/telize/archive/${TELIZE_VERSION}.tar.gz | \
