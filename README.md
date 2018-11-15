@@ -28,6 +28,10 @@ docker run -dit --name my_streaming_server \
   openresty -g "daemon off;"
 ```
 Then your browser should display OpenResty welcome home page at http://*streaming_server_ip*/
+Later on, just edit the mounted nginx.config file at `~/k8s-openresty-streaming/nginx.conf` for your needs and apply changes with command below
+```bash
+sudo docker exec my_streaming_server sh -c "openresty -t && openresty -s reload"
+```
 ### Quickstart with Kubernetes
 
 ```bash
@@ -47,6 +51,14 @@ rtmp://*streaming_server_ip_or_domain*:1935/*my_live_stream*/*my_stream_name* an
 git clone https://github.com/duythongle/k8s-openresty-streaming.git
 cd k8s-openresty-streaming
 docker build -t openresty-streaming-server -f alpine-fat/Dockerfile .
+# Then run the image
+docker run -dit --name my_streaming_server \
+  -p 80:80 \
+  -p 443:443 \
+  -p 1935:1935 \
+  -v ~/k8s-openresty-streaming/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf \
+  openresty-streaming-server \
+  openresty -g "daemon off;"
 ```
 
 # TODO
