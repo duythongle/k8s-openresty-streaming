@@ -27,8 +27,7 @@ docker run -dit --name my_streaming_server \
   thongld/k8s-openresty-streaming:alpine-fat \
   openresty -g "daemon off;"
 ```
-Then your browser should display OpenResty welcome home page at http://*streaming_server_ip*/
-Later on, just edit the mounted nginx.config file at `~/k8s-openresty-streaming/nginx.conf` for your needs and apply changes with command below
+Then your browser should display OpenResty welcome home page at http://*streaming_server_ip*/ . Later on, just edit the mounted nginx.config file at `~/k8s-openresty-streaming/nginx.conf` for your needs and apply changes with command below
 ```bash
 sudo docker exec my_streaming_server sh -c "openresty -t && openresty -s reload"
 ```
